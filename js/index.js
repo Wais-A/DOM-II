@@ -7,6 +7,8 @@ const h2 = document.querySelectorAll('h2');
 const navBar = document.querySelector('.nav-container');
 const boatImg = document.querySelector('.content-destination img');
 const selected = document.querySelector('h1');
+const textContent = document.querySelector('.text-content p');
+const textContentDiv = document.querySelector('.text-content')
 
 
 // effects
@@ -25,6 +27,9 @@ navBar.addEventListener('wheel', navColor);
 window.addEventListener('load', change);
 window.addEventListener('resize', resized);
 selected.addEventListener('mousemove', select);
+textContentDiv.addEventListener('click', func1);
+textContent.addEventListener('click', func2)
+
 // functions for the events
 
 function pink(){
@@ -93,3 +98,16 @@ function select(){
         alert(`you moved over me!!`);
        
 } 
+
+function func1() {
+    textContentDiv.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`
+    
+  
+}
+
+function func2() {
+    textContent.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`
+
+  event.stopPropagation()
+   
+}
